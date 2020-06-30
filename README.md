@@ -1,4 +1,4 @@
-# SpringBoot+Layui后台管理系统
+# SpringBoot+Layui的NB后台管理系统
 ## 后端：
 SpringBoot  2.1.0  
 tk.mybatis  2.0.2  
