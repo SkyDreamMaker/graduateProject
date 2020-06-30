@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org"
+       xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head th:include="layout :: htmlhead" th:with="title='命令管理'"></head>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+    <!--头-->
+    <div th:replace="fragments/head :: header"></div>
+
+    <div class="layui-body" style="margin: 1%">
+        <hr class="layui-bg-black"/>
+
+        <button class="layui-btn layui-btn-normal" onclick="queryOrder()">查询命令</button>
+<!--        <button class="layui-btn layui-btn-normal" onclick="onlineDevice()">设备上线</button>
+        <button class="layui-btn layui-btn-normal" onclick="offlineDevice()">设备下线</button>-->
+        <button class="layui-btn layui-btn-normal" onclick="addOrder()">命令下发</button>
+        <button class="layui-btn layui-btn-normal" onclick="cancelOrder()">取消指令</button>
+        <div style="display:none;" id="currentUser"><shiro:principal property="id"></shiro:principal></div>
+        <!--数据显示列表-->
+        <table id="orderList" lay-filter="orderTable"></table>
+    </div>
+
+
+    <!--命令下发-->
+    <div id="setOrder" class="layer_self_wrap" style="width:500px;display:none;">
+        <form id="orderForm" class="layui-form layui-form-pane" method="post" action="" style="margin-top: 20px;">
+            <input id="pageNum" type="hidden" name="pageNum"/>
+            <input id="id" type="hidden" name="id"/>
+            <div class="layui-form-item">
+                <label class="layui-form-label">产品ID</label>
+                <div class="layui-input-inline">
+                    <input id="productId" name="productId" lay-verify="required" autocomplete="off" class="layui-input" type="text"/>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">设备ID</label>
+                <div class="layui-input-inline">
+                    <input id="deviceId" name="deviceId" lay-verify="required" autocomplete="off" class="layui-input" type="text"/>
+                </div>
+            </div>
+            <!--1.设备数据变化 2.设备指令响应 3.设备事件上报 4.设备上下线通知 9.TUP合并数据上报-->
+            <div class="layui-form-item">
+                <label class="layui-form-label">服务标识</label>
+                <div class="layui-input-block">
+                    <select id="serviceIdentifier" name="serviceIdentifier" lay-filter="aihao">
+                        <option value="order">order</option>
+                        <option value="online">online</option>
+                        <option value="offline">offline</option>
+                    </select>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">指令名称</label>
+                <div class="layui-input-inline">
+                    <input id="orderInfo" name="orderInfo" lay-verify="required" autocomplete="off" placeholder="order必填项" class="layui-input" type="text"/>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">指令内容</label>
+                <div class="layui-input-inline">
+                    <input id="orderValue" name="orderValue" lay-verify="required" autocomplete="off" class="layui-input" placeholder="order必填项" type="text"/>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block" style="margin-left: 10px;">
+                    <button class="layui-btn"  lay-submit="" lay-filter="orderSubmit">提交</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!--添加或编辑用户-->
+    <div id="queryOrderList" class="layer_self_wrap" style="width:500px;display:none;">
+        <form id="orderForm2" class="layui-form layui-form-pane" method="post" action="" style="margin-top: 20px;">
+            <div class="layui-form-item">
+                <label class="layui-form-label">产品ID</label>
+                <div class="layui-input-inline">
+                    <input id="productId2" name="productId" lay-verify="required" autocomplete="off" class="layui-input" type="text"/>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">设备ID</label>
+                <div class="layui-input-inline">
+                    <input id="deviceId2" name="deviceId" lay-verify="required" autocomplete="off" class="layui-input" type="text"/>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block" style="margin-left: 10px;">
+                    <button class="layui-btn"  lay-submit="" lay-filter="querySubmit">提交</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!--添加或编辑用户-->
+    <div id="cancelOrderList" class="layer_self_wrap" style="width:500px;display:none;">
+        <form id="cancelOrderForm" class="layui-form layui-form-pane" method="post" action="" style="margin-top: 20px;">
+            <div class="layui-form-item">
+                <label class="layui-form-label">产品ID</label>
+                <div class="layui-input-inline">
+                    <input id="productId3" name="productId" lay-verify="required" autocomplete="off" class="layui-input" type="text"/>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">设备ID</label>
+                <div class="layui-input-inline">
+                    <input id="deviceId3" name="deviceId" lay-verify="required" autocomplete="off" class="layui-input" type="text"/>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">指令ID</label>
+                <div class="layui-input-inline">
+                    <input id="commandId" name="commandId" lay-verify="required" autocomplete="off" class="layui-input" type="text"/>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block" style="margin-left: 10px;">
+                    <button class="layui-btn"  lay-submit="" lay-filter="cancelSubmit">提交</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!--底部-->
+    <div th:replace="fragments/footer :: footer"></div>
+    <script src="/js/dateUtils.js"></script>
+    <script src="/js/order/orderList.js"></script>
+
+</div>
+</body>
+</html>

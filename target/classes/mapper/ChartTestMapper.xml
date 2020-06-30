@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.haiyu.manager.dao.ChartTestMapper">
+  <resultMap id="BaseResultMap" type="com.haiyu.manager.pojo.ChartTest">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="deviceName" />
+    <result column="value" jdbcType="VARCHAR" property="temperature" />
+  </resultMap>
+
+  <sql id="baseColumn">
+    id,name,value
+  </sql>
+
+
+
+
+<!--  &lt;!&ndash;根据数据名称获取数据&ndash;&gt;
+  <select id="getDataByDatasetId" resultMap="BaseResultMap">
+    SELECT <include refid="baseColumn"/>
+    FROM data
+    WHERE datasetId = #{datasetId}
+    and status = 1
+    <if test="id != null">
+      and id != #{id}
+    </if>
+  </select>-->
+
+</mapper>

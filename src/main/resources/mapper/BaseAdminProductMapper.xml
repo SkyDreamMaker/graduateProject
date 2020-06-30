@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.haiyu.manager.dao.BaseAdminProductMapper">
+  <resultMap id="BaseResultMap" type="com.haiyu.manager.pojo.BaseAdminProduct">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="productId" jdbcType="VARCHAR" property="productId" />
+    <result column="productName" jdbcType="VARCHAR" property="productName" />
+    <result column="apiKey" jdbcType="VARCHAR" property="apiKey" />
+    <result column="productType" jdbcType="INTEGER" property="productType" />
+    <result column="status" jdbcType="INTEGER" property="productStatus" />
+    <result column="reg_time" jdbcType="VARCHAR" property="regTime" />
+  </resultMap>
+
+  <sql id="baseColumn">
+    id,productId,productName,apiKey,productType,reg_time,status
+  </sql>
+
+<!--  <update id="updateData">
+    UPDATE data
+    <set>
+      <if test="deviceId != null">
+        deviceId = #{deviceId},
+      </if>
+      <if test="datasetId != null">
+        datasetId = #{datasetId},
+      </if>
+    </set>
+    WHERE id = #{id}
+  </update>
+
+  &lt;!&ndash;更新设备状态-->
+<!--  <update id="updateDataStatus">
+    UPDATE data
+    SET status = #{status}
+    WHERE id = #{id}
+  </update>-->
+
+  <select id="getProductByProductId" resultMap="BaseResultMap">
+    SELECT <include refid="baseColumn"/>
+    FROM product
+    WHERE productId = #{productId}
+    and status = 1
+  </select>
+
+  <select id="getProductByProductName" resultMap="BaseResultMap">
+    SELECT <include refid="baseColumn"/>
+    FROM product
+    WHERE productName = #{productName}
+    and status = 1
+  </select>
+
+<!--  <select id="getProductByDeviceId" resultMap="BaseResultMap">
+    SELECT <include refid="baseColumn"/>
+    FROM product
+    WHERE deviceId = #{deviceId}
+  </select>-->
+
+  <delete id="deleteByProductId">
+    DELETE
+    FROM product
+    WHERE productId = #{productId}
+  </delete>
+
+<!--获取数据列表-->
+<select id="getProductList" resultType="com.haiyu.manager.dto.AdminProductDTO">
+  SELECT id, apiKey, productId, productName,
+  productType, reg_time AS regTime, status AS productStatus
+  FROM product
+
+  <where>
+    <if test="productId != null and productId != '' ">
+      and productId LIKE '%' #{productId} '%'
+    </if>
+    <if test="productName != null and productName != '' ">
+      and productName  LIKE '%' #{productName} '%'
+    </if>
+    <if test="startTime != null and startTime != '' ">
+      and reg_time &gt;  #{startTime}
+    </if>
+    <if test="endTime != null and endTime != '' ">
+      and reg_time &lt;  #{endTime}
+    </if>
+  </where>
+</select>
+
+
+</mapper>

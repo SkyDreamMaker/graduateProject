@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.haiyu.manager.dao.BaseAdminChartMapper">
+  <resultMap id="BaseResultMap" type="com.haiyu.manager.pojo.BaseAdminChart">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="deviceName" jdbcType="VARCHAR" property="deviceName" />
+    <result column="temperature" jdbcType="VARCHAR" property="temperature" />
+    <result column="deviceId" jdbcType="VARCHAR" property="deviceId" />
+    <result column="humilevel" jdbcType="VARCHAR" property="humilevel" />
+    <result column="message" jdbcType="VARCHAR" property="message" />
+    <result column="battery" jdbcType="VARCHAR" property="battery" />
+    <result column="signalStrength" jdbcType="VARCHAR" property="signalStrength" />
+    <result column="reg_time" jdbcType="VARCHAR" property="regTime" />
+  </resultMap>
+
+  <sql id="baseColumn">
+    id,deviceName,temperature,deviceId,reg_time,humilevel,message,battery,signalStrength
+  </sql>
+
+
+  <!--根据设备名称获取数据-->
+  <select id="getChartListByDeviceName" resultType="com.haiyu.manager.pojo.BaseAdminChart">
+    SELECT id, deviceId, deviceName, temperature, signalStrength,battery,message,
+    humilevel, reg_time AS regTime
+    FROM chart
+    WHERE deviceName = #{deviceName}
+  </select>
+
+  <!--根据设备名称获取数据-->
+  <select id="getChartByTime" resultType="com.haiyu.manager.pojo.BaseAdminChart">
+    SELECT id, deviceId, deviceName, temperature, signalStrength,battery,message,
+    humilevel, reg_time AS regTime
+    FROM chart
+    WHERE reg_time = #{reg_time}
+  </select>
+
+
+<!--获取数据列表-->
+<select id="getChartList" resultType="com.haiyu.manager.dto.AdminChartDTO">
+  SELECT id, deviceId, deviceName, temperature,
+  humilevel, reg_time AS regTime
+  FROM chart
+
+  <where>
+    <if test="deviceId != null and deviceId != '' ">
+      and deviceId LIKE '%' #{deviceId} '%'
+    </if>
+    <if test="deviceName != null and deviceName != '' ">
+      and deviceName  LIKE '%' #{deviceName} '%'
+    </if>
+    <if test="startTime != null and startTime != '' ">
+      and reg_time &gt;  #{startTime}
+    </if>
+    <if test="endTime != null and endTime != '' ">
+      and reg_time &lt;  #{endTime}
+    </if>
+  </where>
+
+</select>
+
+
+</mapper>

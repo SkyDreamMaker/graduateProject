@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="20cc9697-077c-4a2f-8958-8fa4c55e0f79" name="默认更改列表" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1acAoZYVJigwktCciPKPSLKxXwk" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="ToolWindowRun.ShowToolbar" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="模块" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.haiyu.manager.nbpojo" />
+      <recent name="com.haiyu.manager.common.utils" />
+      <recent name="com.haiyu.manager.pojo" />
+      <recent name="com.haiyu.manager.dto" />
+      <recent name="com.haiyu.manager.dao" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\A-NB-IoT\springboot-layui-master\src\main\resources\static\images" />
+      <recent name="F:\A-NB-IoT\springboot-layui-master\src\main\resources\mapper" />
+      <recent name="F:\A-NB-IoT\springboot-layui-master\src\main\resources\static\js" />
+      <recent name="F:\A-NB-IoT\springboot-layui-master\src\main\resources\static\css" />
+      <recent name="F:\A-NB-IoT\springboot-layui-master\src\main\resources\templates" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.ManagerApplication">
+    <configuration name="ManagerApplicationTests.CreateProduct" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="manager" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.haiyu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.haiyu" />
+      <option name="MAIN_CLASS_NAME" value="com.haiyu.ManagerApplicationTests" />
+      <option name="METHOD_NAME" value="CreateProduct" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ManagerApplicationTests.DeleteProduct" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="manager" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.haiyu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.haiyu" />
+      <option name="MAIN_CLASS_NAME" value="com.haiyu.ManagerApplicationTests" />
+      <option name="METHOD_NAME" value="DeleteProduct" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ManagerApplicationTests.QueryProductListTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="manager" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.haiyu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.haiyu" />
+      <option name="MAIN_CLASS_NAME" value="com.haiyu.ManagerApplicationTests" />
+      <option name="METHOD_NAME" value="QueryProductListTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ManagerApplicationTests.createProductTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="manager" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.haiyu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.haiyu" />
+      <option name="MAIN_CLASS_NAME" value="com.haiyu.ManagerApplicationTests" />
+      <option name="METHOD_NAME" value="createProductTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SecondApplicationTests.test16" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="manager" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.haiyu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.haiyu" />
+      <option name="MAIN_CLASS_NAME" value="com.haiyu.SecondApplicationTests" />
+      <option name="METHOD_NAME" value="test16" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="manager [install:install]" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="clean" />
+                <option value="install" />
+              </list>
+            </option>
+            <option name="pomFileName" value="pom.xml" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="ManagerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="manager" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.haiyu.manager.ManagerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.SecondApplicationTests.test16" />
+        <item itemvalue="JUnit.ManagerApplicationTests.DeleteProduct" />
+        <item itemvalue="JUnit.ManagerApplicationTests.CreateProduct" />
+        <item itemvalue="JUnit.ManagerApplicationTests.createProductTest" />
+        <item itemvalue="JUnit.ManagerApplicationTests.QueryProductListTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\Administrator\AppData\Roaming\Subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="20cc9697-077c-4a2f-8958-8fa4c55e0f79" name="默认更改列表" comment="" />
+      <created>1587024683503</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1587024683503</updated>
+      <workItem from="1587024687980" duration="12694000" />
+      <workItem from="1587078778200" duration="22182000" />
+      <workItem from="1587121473471" duration="5098000" />
+      <workItem from="1587165502230" duration="15243000" />
+      <workItem from="1587184026547" duration="18173000" />
+      <workItem from="1587253546848" duration="30954000" />
+      <workItem from="1587337614025" duration="12740000" />
+      <workItem from="1587368741799" duration="2020000" />
+      <workItem from="1587371783799" duration="10443000" />
+      <workItem from="1587432486504" duration="18648000" />
+      <workItem from="1587511243421" duration="13339000" />
+      <workItem from="1588142028714" duration="13724000" />
+      <workItem from="1588210628908" duration="20031000" />
+      <workItem from="1588234209563" duration="14841000" />
+      <workItem from="1588284054149" duration="3030000" />
+      <workItem from="1589161878981" duration="2984000" />
+      <workItem from="1589250856401" duration="14642000" />
+      <workItem from="1589334903843" duration="7458000" />
+      <workItem from="1589419469035" duration="4956000" />
+      <workItem from="1589437675980" duration="2849000" />
+      <workItem from="1589696957337" duration="834000" />
+      <workItem from="1589944620916" duration="1087000" />
+      <workItem from="1590480524486" duration="57000" />
+      <workItem from="1591922157962" duration="4038000" />
+      <workItem from="1591926527872" duration="24252000" />
+      <workItem from="1592006868389" duration="13415000" />
+      <workItem from="1592093754409" duration="2371000" />
+      <workItem from="1592119913930" duration="4830000" />
+      <workItem from="1592224758154" duration="2022000" />
+      <workItem from="1592267773076" duration="5523000" />
+      <workItem from="1592295976483" duration="127000" />
+      <workItem from="1592442646185" duration="212000" />
+      <workItem from="1592442946363" duration="125000" />
+      <workItem from="1592443159510" duration="2051000" />
+      <workItem from="1592810722728" duration="3943000" />
+      <workItem from="1592816669822" duration="1537000" />
+      <workItem from="1592819341327" duration="633000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="137" y="24" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1592012995834">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="137" y="24" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.738@0.0.1366.738" timestamp="1592012995834" />
+    <state x="488" y="53" key="#com.intellij.ide.util.MemberChooser" timestamp="1591962677562">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="488" y="53" key="#com.intellij.ide.util.MemberChooser/0.0.1366.738@0.0.1366.738" timestamp="1591962677562" />
+    <state x="286" y="294" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1588213494085">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="286" y="294" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1366.738@0.0.1366.738" timestamp="1588213494085" />
+    <state x="470" y="227" width="426" height="292" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1589162672248">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="470" y="227" width="426" height="292" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1366.738@0.0.1366.738" timestamp="1589162672248" />
+    <state x="63" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1587384139877">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="63" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.738@0.0.1366.738" timestamp="1587384139877" />
+    <state x="413" y="115" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1587371408423">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="413" y="115" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.738@0.0.1366.738" timestamp="1587371408423" />
+    <state x="336" y="0" key="#manager_[install:install]" timestamp="1587079219772">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="336" y="0" key="#manager_[install:install]/0.0.1366.738@0.0.1366.738" timestamp="1587079219772" />
+    <state x="275" y="27" key="#项目结构" timestamp="1588242434078">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="275" y="27" key="#项目结构/0.0.1366.738@0.0.1366.738" timestamp="1588242434078" />
+    <state x="463" y="110" key="FileChooserDialogImpl" timestamp="1592818092586">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="463" y="110" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1592818092586" />
+    <state width="1323" height="337" key="GridCell.Tab.0.bottom" timestamp="1592296105819">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1323" height="337" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1592296105819" />
+    <state width="1323" height="337" key="GridCell.Tab.0.center" timestamp="1592296105818">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1323" height="337" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1592296105818" />
+    <state width="1323" height="337" key="GridCell.Tab.0.left" timestamp="1592296105818">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1323" height="337" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1592296105818" />
+    <state width="1323" height="337" key="GridCell.Tab.0.right" timestamp="1592296105818">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1323" height="337" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1592296105818" />
+    <state width="1323" height="337" key="GridCell.Tab.1.bottom" timestamp="1592296105819">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1323" height="337" key="GridCell.Tab.1.bottom/0.0.1366.738@0.0.1366.738" timestamp="1592296105819" />
+    <state width="1323" height="337" key="GridCell.Tab.1.center" timestamp="1592296105819">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1323" height="337" key="GridCell.Tab.1.center/0.0.1366.738@0.0.1366.738" timestamp="1592296105819" />
+    <state width="1323" height="337" key="GridCell.Tab.1.left" timestamp="1592296105819">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1323" height="337" key="GridCell.Tab.1.left/0.0.1366.738@0.0.1366.738" timestamp="1592296105819" />
+    <state width="1323" height="337" key="GridCell.Tab.1.right" timestamp="1592296105819">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1323" height="337" key="GridCell.Tab.1.right/0.0.1366.738@0.0.1366.738" timestamp="1592296105819" />
+    <state width="1323" height="227" key="GridCell.Tab.2.bottom" timestamp="1588250690076">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1323" height="227" key="GridCell.Tab.2.bottom/0.0.1366.738@0.0.1366.738" timestamp="1588250690076" />
+    <state width="1323" height="227" key="GridCell.Tab.2.center" timestamp="1588250690076">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1323" height="227" key="GridCell.Tab.2.center/0.0.1366.738@0.0.1366.738" timestamp="1588250690076" />
+    <state width="1323" height="227" key="GridCell.Tab.2.left" timestamp="1588250690076">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1323" height="227" key="GridCell.Tab.2.left/0.0.1366.738@0.0.1366.738" timestamp="1588250690076" />
+    <state width="1323" height="227" key="GridCell.Tab.2.right" timestamp="1588250690076">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1323" height="227" key="GridCell.Tab.2.right/0.0.1366.738@0.0.1366.738" timestamp="1588250690076" />
+    <state x="323" y="66" key="NewModule_or_Project.wizard" timestamp="1592446491496">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="323" y="66" key="NewModule_or_Project.wizard/0.0.1366.738@0.0.1366.738" timestamp="1592446491495" />
+    <state x="184" y="11" key="SettingsEditor" timestamp="1592446411521">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="184" y="11" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1592446411521" />
+    <state x="565" y="88" width="746" height="600" key="find.popup" timestamp="1592819362553">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="565" y="88" width="746" height="600" key="find.popup/0.0.1366.738@0.0.1366.738" timestamp="1592819362553" />
+    <state x="57" y="70" key="new project wizard" timestamp="1592815727653">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="57" y="70" key="new project wizard/0.0.1366.738@0.0.1366.738" timestamp="1592815727653" />
+    <state x="339" y="165" key="run.anything.popup" timestamp="1591940247624">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="339" y="165" key="run.anything.popup/0.0.1366.738@0.0.1366.738" timestamp="1591940247624" />
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1589283235147">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1589283235147" />
+  </component>
+</project>

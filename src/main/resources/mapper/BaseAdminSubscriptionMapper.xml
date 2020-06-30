@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.haiyu.manager.dao.BaseAdminSubscriptionMapper">
+  <resultMap id="BaseResultMap" type="com.haiyu.manager.pojo.BaseAdminSubscription">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="subId" jdbcType="VARCHAR" property="subId" />
+    <result column="subType" jdbcType="VARCHAR" property="subType" />
+    <result column="subLevel" jdbcType="VARCHAR" property="subLevel" />
+    <result column="productId" jdbcType="VARCHAR" property="productId" />
+    <result column="subUrl" jdbcType="VARCHAR" property="subUrl" />
+    <result column="deviceId" jdbcType="INTEGER" property="deviceId" />
+    <result column="reg_time" jdbcType="VARCHAR" property="regTime" />
+  </resultMap>
+
+  <sql id="baseColumn">
+    id,subId,subType,deviceId,reg_time,subLevel,productId,subUrl
+  </sql>
+
+  <select id="getSubscriptionById" resultMap="BaseResultMap">
+    SELECT <include refid="baseColumn"/>
+    FROM subscription
+    WHERE id = #{id}
+  </select>
+
+  <select id="getSubscriptionBySubId" resultMap="BaseResultMap">
+    SELECT <include refid="baseColumn"/>
+    FROM subscription
+    WHERE subId = #{subId}
+  </select>
+
+  <!--删除订阅-->
+  <delete id="deleteSubscription" parameterType="int">
+    DELETE
+    FROM subscription
+    WHERE id = #{id}
+  </delete>
+
+<!--获取设置列表-->
+<select id="getSubscriptionList" resultType="com.haiyu.manager.dto.AdminSubscriptionDTO">
+  SELECT id, subId,subType,subUrl,
+  deviceId, reg_time AS regTime,subLevel,productId
+  FROM subscription
+
+  <where>
+    <if test="subId != null and subId != '' ">
+      and subId LIKE '%' #{subId} '%'
+    </if>
+    <if test="subLevel != null and subLevel != '' ">
+      and subLevel  LIKE '%' #{subLevel} '%'
+    </if>
+    <if test="startTime != null and startTime != '' ">
+      and reg_time &gt;  #{startTime}
+    </if>
+    <if test="endTime != null and endTime != '' ">
+      and reg_time &lt;  #{endTime}
+    </if>
+  </where>
+</select>
+
+
+
+</mapper>

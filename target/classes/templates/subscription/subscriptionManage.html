@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org"
+       xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head th:include="layout :: htmlhead" th:with="title='设备管理'"></head>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+    <!--头-->
+    <div th:replace="fragments/head :: header"></div>
+
+    <div class="layui-body" style="margin: 1%">
+
+        <form id="deviceSearch" class="layui-form layui-form-pane" method="post" action="" style="margin-top: 20px;">
+            <div class="layui-form-item">
+                <label class="layui-form-label">订阅ID</label>
+                <div class="layui-input-inline">
+                    <input name="subId" autocomplete="off" class="layui-input" type="text"/>
+                </div>
+                <label class="layui-form-label">订阅级别</label>
+                <div class="layui-input-inline">
+                    <input name="subLevel" autocomplete="off" class="layui-input" type="text"/>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-inline">
+                    <label class="layui-form-label">注册时间</label>
+                        <div class="layui-input-inline" style="width: 175px;">
+                            <input  name="startTime" id="startTime" placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input" type="text"/>
+                        </div>
+                    <div class="layui-form-mid">-</div>
+                        <div class="layui-input-inline" style="width: 175px;">
+                            <input name="endTime" id="endTime" placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input" type="text"/>
+                        </div>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                    <button class="layui-btn"  lay-submit="" lay-filter="searchSubmit">搜索</button>
+                </div>
+            </div>
+        </form>
+
+        <!--<hr class="layui-bg-blue"/>-->
+        <hr class="layui-bg-black"/>
+
+        <button class="layui-btn layui-btn-normal" onclick="updateSubscription()">更新订阅</button>
+        <button class="layui-btn layui-btn-normal" onclick="addSubscription()">创建订阅</button>
+
+        <div style="display:none;" id="currentUser"><shiro:principal property="id"></shiro:principal></div>
+        <!--数据显示列表-->
+        <table id="subscriptionList" lay-filter="subscriptionTable"></table>
+
+        <script type="text/html" id="optBar">
+            <a class="layui-btn layui-btn-xs" lay-event="del">删除订阅</a>
+        </script>
+    </div>
+
+
+    <!--添加或编辑用户-->
+    <div id="setSubscription" class="layer_self_wrap" style="width:500px;display:none;">
+        <form id="subscriptionForm" class="layui-form layui-form-pane" method="post" action="" style="margin-top: 20px;">
+            <input id="pageNum" type="hidden" name="pageNum"/>
+            <input id="id" type="hidden" name="id"/>
+            <div class="layui-form-item">
+                <label class="layui-form-label">产品ID</label>
+                <div class="layui-input-inline">
+                    <input id="productId" name="productId" lay-verify="required" autocomplete="off" class="layui-input" type="text"/>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">设备ID</label>
+                <div class="layui-input-inline">
+                    <input id="deviceId" name="deviceId" lay-verify="required" autocomplete="off" class="layui-input" type="text"/>
+                </div>
+            </div>
+            <!--1.设备数据变化 2.设备指令响应 3.设备事件上报 4.设备上下线通知 9.TUP合并数据上报-->
+            <div class="layui-form-item">
+                <label class="layui-form-label">消息类型</label>
+                <div class="layui-input-block">
+                    <select id="subType" name="subType" lay-filter="aihao">
+                        <option value="1">设备数据变化</option>
+                        <option value="2">设备指令响应</option>
+                        <option value="3">设备事件上报</option>
+                        <option value="4">设备上下线通知</option>
+                        <option value="9">TUP合并数据上报</option>
+                    </select>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">消息级别</label>
+                <div class="layui-input-block">
+                    <select id="subLevel" name="subLevel" lay-filter="aihao">
+                        <option value="1">产品级</option>
+                        <option value="2">设备级</option>
+                    </select>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">订阅地址</label>
+                <div class="layui-input-inline">
+                    <input id="subUrl" name="subUrl" lay-verify="required" autocomplete="off" class="layui-input" type="text"/>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block" style="margin-left: 10px;">
+                    <button class="layui-btn"  lay-submit="" lay-filter="subscriptionSubmit">提交</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!--底部-->
+    <div th:replace="fragments/footer :: footer"></div>
+    <script src="/js/dateUtils.js"></script>
+    <script src="/js/subscription/subscriptionList.js"></script>
+
+</div>
+</body>
+</html>

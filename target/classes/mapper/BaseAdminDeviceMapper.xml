@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.haiyu.manager.dao.BaseAdminDeviceMapper">
+  <resultMap id="BaseResultMap" type="com.haiyu.manager.pojo.BaseAdminDevice">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="userName" jdbcType="VARCHAR" property="sysUserName" />
+    <result column="deviceName" jdbcType="VARCHAR" property="deviceName" />
+    <result column="deviceId" jdbcType="VARCHAR" property="deviceId" />
+    <result column="productId" jdbcType="VARCHAR" property="productId" />
+    <result column="imei" jdbcType="VARCHAR" property="imei" />
+    <result column="status" jdbcType="INTEGER" property="deviceStatus" />
+    <result column="reg_time" jdbcType="VARCHAR" property="regTime" />
+  </resultMap>
+
+  <sql id="baseColumn">
+    id,userName,deviceName,deviceId,reg_time,status,productId,imei
+  </sql>
+
+  <update id="updateDevice">
+    UPDATE device
+    <set>
+      <if test="sysUserName != null">
+        userName = #{sysUserName},
+      </if>
+      <if test="deviceName != null">
+        deviceName = #{deviceName},
+      </if>
+      <if test="imei != null">
+        imei = #{imei},
+      </if>
+    </set>
+    WHERE id = #{id}
+  </update>
+  <!--更新设备状态-->
+  <update id="updateDeviceStatus">
+    UPDATE device
+    SET status = #{status}
+    WHERE id = #{id}
+  </update>
+
+  <select id="getDeviceByDeviceName" resultMap="BaseResultMap">
+    SELECT <include refid="baseColumn"/>
+    FROM device
+    WHERE deviceName = #{deviceName}
+    and status = 1
+    <if test="id != null">
+      and id != #{id}
+    </if>
+  </select>
+
+  <delete id="destroyDevice" parameterType="int">
+    DELETE
+    FROM device
+    WHERE id = #{id}
+  </delete>
+
+  <select id="getDeviceById" resultMap="BaseResultMap">
+    SELECT <include refid="baseColumn"/>
+    FROM device
+    WHERE id = #{id}
+  </select>
+
+  <select id="getDeviceByDeviceId" resultMap="BaseResultMap">
+    SELECT <include refid="baseColumn"/>
+    FROM device
+    WHERE deviceId = #{deviceId}
+  </select>
+
+  <select id="findByDeviceName" resultMap="BaseResultMap">
+    SELECT <include refid="baseColumn"/>
+    FROM device
+    WHERE deviceName = #{deviceName}
+    and status = 1
+  </select>
+
+<!--获取设置列表-->
+<select id="getDeviceList" resultType="com.haiyu.manager.dto.AdminDeviceDTO">
+  SELECT id, userName AS sysUserName ,deviceName,
+  deviceId, reg_time AS regTime, status AS deviceStatus,imei,productId
+  FROM device as d
+
+  <where>
+    <if test="sysUserName != null and sysUserName != '' ">
+      and userName LIKE '%' #{sysUserName} '%'
+    </if>
+    <if test="deviceName != null and deviceName != '' ">
+      and deviceName  LIKE '%' #{deviceName} '%'
+    </if>
+    <if test="startTime != null and startTime != '' ">
+      and reg_time &gt;  #{startTime}
+    </if>
+    <if test="endTime != null and endTime != '' ">
+      and reg_time &lt;  #{endTime}
+    </if>
+  </where>
+</select>
+  <select id="getCurrnetDeviceList" resultType="com.haiyu.manager.dto.AdminDeviceDTO" parameterType="String">
+    SELECT id, userName AS sysUserName ,deviceName,
+    deviceId, reg_time AS regTime, status AS deviceStatus, imei, productId
+    FROM device as d
+    WHERE userName = #{sysUserName}
+  </select>
+
+  <select id="getDeviceByUserName" resultType="com.haiyu.manager.dto.AdminDeviceDTO">
+    SELECT id, userName AS sysUserName ,deviceName,
+    deviceId, reg_time AS regTime, status AS deviceStatus, imei, productId
+    FROM device
+    WHERE userName = #{userName}
+  </select>
+
+</mapper>
